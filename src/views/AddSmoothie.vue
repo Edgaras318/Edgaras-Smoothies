@@ -14,6 +14,7 @@
             <div class="field add-ingredient">
                 <label for="add-ingredient">Add an ingredient:</label>
                 <input type="text" name="add-ingredient" @keydown.tab.prevent="addIng" v-model="another" placeholder="Use tab to add more ingredients">
+                <i class="material-icons add-ing" @click="addIng(ing)">add</i>
             </div>
             <div class="field center-align">
                 <p v-if="feedback" class="red-text">{{ feedback }}</p>
@@ -92,6 +93,13 @@ export default {
     position: relative;
 }
 .add-smoothie .delete{
+    position: absolute;
+    right: 0;
+    bottom: 16px;
+    font-size: 1.4em;
+    cursor: pointer;
+}
+.add-smoothie .add-ing{
     position: absolute;
     right: 0;
     bottom: 16px;
